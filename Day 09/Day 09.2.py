@@ -1,4 +1,3 @@
-from collections import Counter
 terrain = [[int(c) for c in line.strip()] for line in open('Day 09.input')]
 
 for t in terrain:
