@@ -1,9 +1,8 @@
 octopi = [[int(c) for c in line.strip()] for line in open('Day 11.input')]
 
 s = 10
-steps = 0
+flashes = 0
 flashed = [[False] * s for i in range(s)]
-bright = False
 
 
 def flash(o, fx, fy):
@@ -15,15 +14,15 @@ def flash(o, fx, fy):
                 flash(o, fi, fj)
 
 
-while not bright:
+for _ in range(100):
     for x in range(s):
         for y in range(s):
             flash(octopi, x, y)
-    steps += 1
-    bright = all([all(f) for f in flashed])
+
     for x in range(s):
         for y in range(s):
             if octopi[x][y] > 9:
                 octopi[x][y] = 0
+                flashes += 1
             flashed[x][y] = False
-print(steps)
+print(flashes)
