@@ -16,7 +16,7 @@ paths = [[False, 'start', nxt] for nxt in nodes['start']]
 
 while not all('end' in p for p in paths):
     newp = []
-    for idx, p in enumerate(paths):
+    for p in paths:
         last = p[-1]
         if last != 'end':
             for q in nodes[last]:
@@ -25,8 +25,9 @@ while not all('end' in p for p in paths):
                 elif q not in p:
                     newp.append(p + [q])
                 elif not p[0]:
-                    p[0] = True
-                    newp.append(p + [q])
+                    n = p.copy()
+                    n[0] = True
+                    newp.append(n + [q])
         else:
             newp.append(p)
     paths = newp
