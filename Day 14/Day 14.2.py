@@ -1,6 +1,6 @@
 lines = [l.strip() for l in open('Day 14.input')]
 target = lines[0]
-repl = {l.split(' -> ')[0] : l.split(' -> ')[1] for l in lines[1:]}
+repl = {l.split(' -> ')[0]: l.split(' -> ')[1] for l in lines[1:]}
 
 occur = {k: 0 for k in repl.keys()}
 for i in range(len(target[:-1])):

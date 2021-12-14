@@ -1,6 +1,6 @@
 lines = [l.strip() for l in open('Day 14.input')]
 target = lines[0]
-repl = {l.split(' -> ')[0] : l.split(' -> ')[1] for l in lines[1:]}
+repl = {l.split(' -> ')[0]: l.split(' -> ')[1] for l in lines[1:]}
 
 for _ in range(10):
     ntarget = target[-1]
